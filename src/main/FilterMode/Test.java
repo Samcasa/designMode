@@ -7,6 +7,7 @@ import java.beans.PropertyDescriptor;
 /**
  * @author: 瓦力
  * @date: 2020-05-23 14:04
+ * @Target: 过滤器模式
  **/
 
 public class Test {

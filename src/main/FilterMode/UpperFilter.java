@@ -3,6 +3,7 @@ package FilterMode;
 /**
  * @author: 瓦力
  * @date: 2020-05-23 13:59
+ * @Target: 过滤器模式
  **/
 
 public class UpperFilter implements InputFilter {

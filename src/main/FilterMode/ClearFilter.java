@@ -3,6 +3,7 @@ package FilterMode;
 /**
  * @author: 瓦力
  * @date: 2020-05-23 13:59
+ * @Target: 过滤器模式
  **/
 
 public class ClearFilter implements InputFilter {
@@ -15,6 +16,7 @@ public class ClearFilter implements InputFilter {
 
     @Override
     public int doRead(byte[] chunk) throws Exception {
+        //这个buffer书
         int i= buffer.doRead(chunk);
         if (i == -1)
             return -1;

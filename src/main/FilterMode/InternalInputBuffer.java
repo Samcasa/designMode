@@ -3,6 +3,7 @@ package FilterMode;
 /**
  * @author: 瓦力
  * @date: 2020-05-23 13:54
+ * @Target: 过滤器模式
  **/
 
 public class InternalInputBuffer implements InputBuffer {
@@ -19,15 +20,19 @@ public class InternalInputBuffer implements InputBuffer {
             filter.setBuffer(inputStreaminputBuffer);
         } else {
             for (int i = 0; i <= lastActiveFilter; i++) {
-                if (activeFilters[i] == filter)
+                //过滤器不重复添加
+                if (activeFilters[i].equals(filter))
                     return;
             }
+            //当前的filter设置指向上一个过滤器的buffer 这里是递归调用的关键
             filter.setBuffer(activeFilters[lastActiveFilter]);
         }
+
         activeFilters[++lastActiveFilter] = filter;
     }
 
     public int doRead(byte[] chunk) throws Exception {
+
         if (lastActiveFilter == -1){
              return inputStreaminputBuffer.doRead(chunk);
         }else {
