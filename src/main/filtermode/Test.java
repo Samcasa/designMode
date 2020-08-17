@@ -1,8 +1,5 @@
-package FilterMode;
+package filtermode;
 
-
-
-import java.beans.PropertyDescriptor;
 
 /**
  * @author: 瓦力

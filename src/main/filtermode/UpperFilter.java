@@ -1,4 +1,4 @@
-package FilterMode;
+package filtermode;
 
 /**
  * @author: 瓦力
