@@ -18,13 +18,12 @@ public class FilterChain implements Filter {
             Filter filter = list.get(index);
             index++;
             filter.doFilter(request,response,filterChain);
-
             return;
         }
 
         //do servlet request in TOMCAT
-        System.out.println("do servlet request");
-        response.setResponseBody("servlet.service(Request,Response)");
+        System.out.println("servlet.service(Request,Response)");
+        response.setResponseBody("get servlet.service(Request,Response) result");
     }
 
     public FilterChain add(Filter filter){

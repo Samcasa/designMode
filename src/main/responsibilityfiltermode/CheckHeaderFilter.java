@@ -11,6 +11,7 @@ public class CheckHeaderFilter implements Filter {
     public void doFilter(Request request, Response response, FilterChain filterChain) {
         String token = request.getHeader().get("token");
         System.out.println(token);
+        System.out.println("begin CheckHeaderFilter");
         filterChain.doFilter(request,response,filterChain);
         System.out.println("finish CheckHeaderFilter");
     }

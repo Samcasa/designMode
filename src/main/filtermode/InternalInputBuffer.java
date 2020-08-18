@@ -32,8 +32,8 @@ public class InternalInputBuffer implements InputBuffer {
     }
 
     public int doRead(byte[] chunk) throws Exception {
-
         if (lastActiveFilter == -1){
+            //注意这里不是递归跳出条件
              return inputStreaminputBuffer.doRead(chunk);
         }else {
             return activeFilters[lastActiveFilter].doRead(chunk);
